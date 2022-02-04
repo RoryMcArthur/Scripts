@@ -1,0 +1,19 @@
+#!/bin/bash
+
+get_volume() {
+  local mute=$(amixer get Master | grep -o "[a-z]*" | tail -n 1)
+  [[ $mute == "off" ]] && echo "" && exit 0
+  local volume=$(amixer get Master | grep -o "[0-9]*%")
+  [ ${volume::-1} -eq  0 ] && echo " ${volume}" && exit 0
+  echo " ${volume}"
+}
+
+timedate=$(date '+%a %d %b %H:%M')
+volume=$(get_volume)
+brightness=$(xbacklight -get)%
+btcusd=\$$(cat ~/.local/share/btcusd)
+
+# xsetroot -name "  $btcusd | $volume |  $brightness | $timedate "
+
+xsetroot -name " $volume |  $brightness | $timedate "
+

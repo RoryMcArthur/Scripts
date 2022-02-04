@@ -1,0 +1,14 @@
+#!/bin/bash
+
+[ -z "$1" ] && { exit; }
+
+case "$1" in
+  *mkv|*webm|*mp4|*bitchute.com*)
+    mpv "$1" > /dev/null 2>&1 ;;
+  *youtube.com*)
+    mpv -ytdl-raw-options=format='best[height<=1080]' "$1" > /dev/null 2>&1 ;;
+  *videos.lukesmith.xyz*)
+    echo $1 | awk -F '/w/' '{print $1 "/static/webseed/" $2 "-360.mp4"}' | xargs mpv > /dev/null 2>&1 ;; 
+  *)
+    xdg-open "$1"
+esac
