@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for x in $(find /sys/bus/hid/devices/*17EF:6047*); do
+  y="${x}/fn_lock"
+  [[ -f ${y} ]] && echo 0 > ${y}
+done

@@ -1,0 +1,10 @@
+[Unit]
+Description=Thinkpad FnLock Fix
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/fn_lock
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
