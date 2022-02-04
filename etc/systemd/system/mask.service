@@ -1,0 +1,10 @@
+[Unit]
+Description=kworker cpu fix
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/mask.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
