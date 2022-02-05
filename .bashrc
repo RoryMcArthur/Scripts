@@ -9,6 +9,8 @@ PS1='[\u@\h \W]\$ '
 
 # alias ls='ls  -lha --color=auto --group-directories-first'
 alias ls='exa -lha --color=auto --group-directories-first'
+alias l='ls'
+alias v='vim'
 alias du='du -h -d 0'
 alias df='df -h'
 alias pm='sudo pacman'
