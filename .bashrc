@@ -5,9 +5,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PS1='[\u@\h \W]\$ '
+PS1='\033[1m\W > \033[0m'
 
-# alias ls='ls  -lha --color=auto --group-directories-first'
 alias ls='exa -lha --color=auto --group-directories-first'
 
 alias l='ls'
@@ -18,12 +17,21 @@ alias q='exit'
 alias m='neomutt'
 alias f='firefox &'
 alias n='newsboat'
+alias s='sxiv'
+
+alias pl='pacman -Qe'
+alias pf='pacman -Ss'
+alias pi='sudo pacman -Sy'
+alias pp='sudo pacman -Syu'
 
 alias g='git'
 alias ga='git add'
 alias gs='git status'
 alias gc='git commit'
 alias gp='git push'
+alias gg='git clone'
+
+alias rrm='rm -rf'
 
 alias du='du -h -d 0'
 alias df='df -h'
