@@ -1,7 +1,3 @@
-#
-# ~/.bashrc
-#
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -19,6 +15,7 @@ alias f='firefox &'
 alias n='newsboat'
 alias s='sxiv'
 
+alias p='pacman'
 alias pl='pacman -Qe'
 alias pf='pacman -Ss'
 alias pi='sudo pacman -Sy'
