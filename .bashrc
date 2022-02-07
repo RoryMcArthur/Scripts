@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PS1='\033[1m\W > \033[0m'
+PS1='\033[1;31m\W > \033[0m'
 
 alias ls='exa -lha --color=auto --group-directories-first'
 
