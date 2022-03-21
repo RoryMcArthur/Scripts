@@ -127,6 +127,7 @@ setup() {
   grub-mkconfig -o /boot/grub/grub.cfg
 
   # setup wireless
+  echo -e "\n# Cloudflare\nnameserver 1.1.1.1" >> /etc/resolv.conf
   mkdir -p /etc/iwd
   printf "%b" "[General]\nEnableNetworkConfiguration=true\n\n" \
     "[Network]\nNameResolvingService=systemd\n" > /etc/iwd/main.conf
