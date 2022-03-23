@@ -74,6 +74,9 @@ install() {
   cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist
   cp "$0" /mnt/root/setup.sh
 
+  # use systemd-resolved symlink
+  rm /etc/resolv.conf
+
   # run post-install setup in chroot
   arch-chroot /mnt ./root/setup.sh setup 
 }
@@ -127,7 +130,6 @@ setup() {
   grub-mkconfig -o /boot/grub/grub.cfg
 
   # setup wireless
-  echo -e "\n# Cloudflare\nnameserver 1.1.1.1" >> /etc/resolv.conf
   mkdir -p /etc/iwd
   printf "%b" "[General]\nEnableNetworkConfiguration=true\n\n" \
     "[Network]\nNameResolvingService=systemd\n" > /etc/iwd/main.conf
