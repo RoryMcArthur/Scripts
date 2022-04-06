@@ -1,7 +1,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PS1='\033[1;31m\W > \033[0m'
+#PS1='\033[1;31m2k\r[\W]\033[0m '
+PS1="\[\e[36m\][\W] \[\e[m\]"
 
 alias ls='exa -lha --color=auto --group-directories-first'
 
@@ -31,13 +32,16 @@ alias gg='git clone'
 alias rrm='rm -rf'
 
 alias du='du -h -d 0'
-alias df='df -h'
+alias df='df -Th'
 alias pm='sudo pacman'
 alias sd='sudo shutdown now'
 
 PATH="$HOME/bin:$PATH"
 
 # XDG_CONFIG_HOME="$HOME/.config"
+
+# yubikey pin
+export PASSWORD_STORE_GPG_OPTS="--pinentry-mode loopback --passphrase 1ew&P\3zT3!VF8H^{na>d#SD=v=pjC"
 
 # line width of manpages
 export MANWIDTH=80
