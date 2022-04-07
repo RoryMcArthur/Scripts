@@ -1,13 +1,16 @@
 window:
-  opacity: 1.0 
+  opacity: 1
   class:
     instance: alacritty
     general: alacritty
   padding:
-    x: 15
-    y: 10
+    x: 5 
+    y: 2 
 
 font:
+  offset:
+    x: 0
+    y: 0 
   normal:
     family: terminus
     style: normal
@@ -17,10 +20,11 @@ font:
 
 draw_bold_text_with_bright_colors: true
 
-  #cursor:
-  #  style:
+cursor:
+  blink_interval: 400
+  style:
+    blinking: On 
   #    shape: Underline
-  #    blinking: On 
 
 colors:
   primary:
@@ -126,7 +130,6 @@ decorations: none
   #   - Windowed
   #   - Maximized
   #   - Fullscreen
-  #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
   #startup_mode: Windowed
